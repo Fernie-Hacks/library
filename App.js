@@ -1,8 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import LoginScreen from "react-native-login-screen";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RegistrarScreen from "./src/screens/RegistrarScreen";
+
 
 // Pantalla de bienvenida
 function HomeScreen({ navigation }) {
@@ -22,13 +24,14 @@ function HomeScreen({ navigation }) {
 }
 
 // Para login
-function LoginScreen() {
+function OnLoginPress() {
   return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Login Screen</Text>
       </View>
   );
 }
+
 
 // Para Registrarse
 function RegistrarseScreen() {
@@ -48,7 +51,8 @@ function App() {
           <Stack.Navigator>
               <Stack.Screen name="Universidad Autonoma de Guadalajara" component={HomeScreen} />
               <Stack.Screen name="Login" component={LoginScreen} />
-              <Stack.Screen name="Registrarse" component={RegistrarseScreen} />
+              <Stack.Screen name="OnLoginPress" component={OnLoginPress} />
+              <RegistrarseScreen/>
           </Stack.Navigator>
       </NavigationContainer>
   );

@@ -1,8 +1,5 @@
 import * as React from 'react';
-import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import LoginScreen from "react-native-login-screen";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Text, View } from 'react-native';
 
 const RegistrarScreen = () => {
     return (

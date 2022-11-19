@@ -1,27 +1,24 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import LoginScreen from "react-native-login-screen";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import RegistrarScreen from "./src/screens/RegistrarScreen";
-import HomeScreen from "./src/screens/HomeScreen";
 
-const Stack = createNativeStackNavigator();
-
-function App() {
-  return (
-      // Stack Screen es cada pantalla la primera de arriba a abajo sera lo q ves primero
-      <NavigationContainer>
-          <Stack.Navigator>
-              <Stack.Screen name="Universidad Autonoma de Guadalajara" component={HomeScreen} />
-              <Stack.Screen name="LoginScreen" component={LoginScreen} />
-              <Stack.Screen name="RegistrarScreen" component={RegistrarScreen} />
-          </Stack.Navigator>
-      </NavigationContainer>
-  );
+const HomeScreen = ({navigation}) => {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Image style={{marginTop: 20,}} source={require('../../../assets/uag.png')} />
+            <View style={styles.containerButtons}>
+                <Pressable style={styles.buttonLogIn} onPress={() => navigation.navigate('LoginScreen')}>
+                    <Text style={styles.text}>Login</Text>
+                </Pressable>
+                <Pressable style={styles.buttonRegistrar} onPress={() => navigation.navigate('RegistrarScreen')}>
+                    <Text style={styles.text}>Registrar</Text>
+                </Pressable>
+            </View>
+        </View>
+    );
 }
 
-export default App;
+export default HomeScreen
 
 const styles = StyleSheet.create({
     container: {
@@ -45,7 +42,7 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: 'blue',
     },
-    buttonRegistrarse: {
+    buttonRegistrar: {
         alignItems: 'center',
         justifyContent: 'center',
         width: '40%',

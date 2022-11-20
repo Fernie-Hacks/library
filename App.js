@@ -7,9 +7,8 @@ import HomeScreen from "./src/screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default function App() {
     return (
-        // Contenidor de Navegacion
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Universidad Autonoma de Guadalajara" component={HomeScreen} />
@@ -19,5 +18,3 @@ function App() {
         </NavigationContainer>
     );
 }
-
-export default App;

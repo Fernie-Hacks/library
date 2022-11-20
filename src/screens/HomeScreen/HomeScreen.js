@@ -2,23 +2,21 @@ import * as React from 'react';
 import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import LoginScreen from "react-native-login-screen";
 
-const HomeScreen = ({navigation}) => {
+export default function HomeScreen({navigation}) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image style={{marginTop: 20,}} source={require('../../../assets/uag.png')} />
             <View style={styles.containerButtons}>
-                <Pressable style={styles.buttonLogIn} onPress={() => navigation.navigate('LoginScreen')}>
+                <Pressable style={styles.buttonLogIn} onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.text}>Login</Text>
                 </Pressable>
-                <Pressable style={styles.buttonRegistrar} onPress={() => navigation.navigate('RegistrarScreen')}>
+                <Pressable style={styles.buttonRegistrar} onPress={() => navigation.navigate('Registrar')}>
                     <Text style={styles.text}>Registrar</Text>
                 </Pressable>
             </View>
         </View>
     );
 }
-
-export default HomeScreen
 
 const styles = StyleSheet.create({
     container: {

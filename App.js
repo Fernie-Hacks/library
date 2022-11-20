@@ -7,17 +7,14 @@ import HomeScreen from "./src/screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
-function App() {
-  return (
-      // Contenidor de Navegacion
-      <NavigationContainer>
-          <Stack.Navigator>
-              <Stack.Screen name="Universidad Autonoma de Guadalajara" component={HomeScreen} />
-              <Stack.Screen name="Login" component={LoginScreen} />
-              <Stack.Screen name="Registrar" component={RegistrarScreen} />
-          </Stack.Navigator>
-      </NavigationContainer>
-  );
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name="Universidad Autonoma de Guadalajara" component={HomeScreen} />
+                <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="Registrar" component={RegistrarScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
-
-export default App;

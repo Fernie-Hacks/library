@@ -12,3 +12,9 @@ web-build/
 
 # macOS
 .DS_Store
+
+# For any process info
+*.info
+
+# For Environmental values, ex Postgres
+*.env
